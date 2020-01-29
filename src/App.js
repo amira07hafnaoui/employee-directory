@@ -13,11 +13,11 @@ class App extends Component {
     
   }
 }
-sortby= (key)=> {
-  this.setState({
-    users: this.state.users.sort((a, b) => a[key].registered.age > b[key].registered.age)
-  })
-}
+// sortby= (key)=> {
+//   this.setState({
+//     users: this.state.users.sort((a, b) => a[key].registered.age > b[key].registered.age)
+//   })
+// }
 getRandomUsers=(e) => {
   e.preventDefault();
   this.setState({isLodaing : true})
@@ -71,7 +71,7 @@ this.setState({ users:filteredGender }, () => console.log(this.state.users));
                 <button className=" btn waves-effect waves-light  "onClick={() =>this.filterGender("Female")}>Show only Female</button>
            
                 <button className=" paddingbtn btn waves-effect waves-light  "onClick={() =>this.filterGender("male")}>Show only Male</button>
-                <button className=" paddingbtn btn" onClick={()=>this.Sortby("age")}>Sort by Age </button >
+                <button className=" paddingbtn btn" >Sort by Age </button >
               </div>
               <div className=" deletbtn col s12">
               { this.state.users.length>0 ? <button className="   btn waves-effect waves-light red lighten-2" onClick={this.clearRandomUsers}>Delete all</button>:<div className="container  red-text">please press the button  to see list of employees</div>}
